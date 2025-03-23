@@ -1,7 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:try_app/pages/CounterPage.dart';
+import 'package:try_app/pages/HomePage.dart';
+import 'package:try_app/pages/ProfilePage.dart';
+import 'package:try_app/pages/SettingsPage.dart';
+import 'package:try_app/pages/TodoPage.dart';
 
-class One extends StatelessWidget {
-  const One({super.key});
+class One extends StatefulWidget {
+  One({super.key});
+
+  @override
+  State<One> createState() => _One();
+}
+
+class _One extends State<One> {
+  int _selectedIndex = 0;
+
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final List _pages = [
+    // HomePage(),
+    HomePage(),
+
+    // ProfilePage(),
+    ProfilePage(),
+
+    // SettingsPage(),
+    // SettingsPage(),
+
+    // CounterPage(),
+    // CounterPage(),
+
+    // Todopage(),
+    Todopage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +73,22 @@ class One extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/two');
-          },
-          child: Text('Go to Page Two'),
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _navigateBottomBar,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+
+          // BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Counter'),
+        ],
       ),
+      body: _pages[_selectedIndex],
     );
   }
 }
