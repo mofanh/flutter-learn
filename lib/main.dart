@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:try_app/pages/HomePage.dart';
 import 'package:try_app/pages/SettingsPage.dart';
+import 'package:try_app/pages/TodoPage.dart';
 import 'package:try_app/pages/one.dart';
 
 void main() {
@@ -20,44 +21,9 @@ class MyApp extends StatelessWidget {
         '/one': (context) => One(),
         '/home': (context) => HomePage(),
         '/settings': (context) => SettingsPage(),
+        '/todo': (context) => Todopage(),
       },
-      // home: Scaffold(
-      //   // backgroundColor: Colors.deepPurple[200],
-      //   // appBar: AppBar(
-      //   //   title: Text('App Bar', style: TextStyle(color: Colors.white)),
-      //   //   centerTitle: true,
-      //   //   backgroundColor: Colors.deepPurple,
-      //   //   elevation: 0,
-      //   //   leading: Icon(Icons.menu, color: Colors.white),
-      //   //   actions: [
-      //   //     IconButton(
-      //   //       onPressed: () {},
-      //   //       icon: Icon(Icons.logout),
-      //   //       color: Colors.white,
-      //   //     ),
-      //   //   ],
-      //   // ),
-      //   body: Center(
-      //     child: GestureDetector(
-      //       onTap: userTap,
-      //       child: Container(
-      //         height: 200,
-      //         width: 200,
-      //         color: Colors.deepPurple[200],
-      //         child: Center(
-      //           child: Text(
-      //             'Tap Me',
-      //             style: TextStyle(
-      //               color: Colors.white,
-      //               fontSize: 20,
-      //               fontWeight: FontWeight.bold,
-      //             ),
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
+      theme: ThemeData(primarySwatch: Colors.yellow),
     );
   }
 }

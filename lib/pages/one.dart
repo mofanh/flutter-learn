@@ -62,6 +62,16 @@ class _One extends State<One> {
                 Navigator.pushNamed(context, '/home');
               },
             ),
+            ListTile(
+              title: Text('T O D O'),
+              leading: Icon(Icons.home),
+              onTap: () {
+                // 使用pop使得在返回到首页时drawer不默认弹出
+                Navigator.pop(context);
+
+                Navigator.pushNamed(context, '/todo');
+              },
+            ),
             // setting list
             ListTile(
               title: Text('S E T T I N G'),
